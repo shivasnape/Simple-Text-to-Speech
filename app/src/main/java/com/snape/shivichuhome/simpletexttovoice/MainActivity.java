@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        //casting
         txt=(EditText)findViewById(R.id.editText);
         click=(Button)findViewById(R.id.button);
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int i) {
                 if(i!=TextToSpeech.ERROR)
                 {
+                    //setting which language you want
                     texttoSpeech.setLanguage(Locale.US);
                 }
             }
@@ -57,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
 
